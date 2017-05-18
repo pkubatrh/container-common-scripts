@@ -96,7 +96,7 @@ for dir in ${dirs}; do
   fi
 
   if [[ -v TEST_MODE ]]; then
-    VERSION=$dir IMAGE_NAME=${IMAGE_NAME} test/run
+    VERSION=$dir IMAGE_NAME=${IMAGE_NAME} test/run "$TEST_CASE" 
 
     if [[ $? -eq 0 ]] && [[ "${TAG_ON_SUCCESS}" == "true" ]]; then
       echo "-> Re-tagging ${IMAGE_NAME} image to ${IMAGE_NAME%"-candidate"}"
