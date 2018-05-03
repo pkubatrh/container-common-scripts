@@ -93,6 +93,8 @@ test-openshift: tag
 tag: build
 	VERSIONS="$(VERSIONS)" $(script_env) $(tag)
 
+include $(common_dir)/syntax.mk
+
 .PHONY: clean
 clean: clean-images $(clean-hook)
 

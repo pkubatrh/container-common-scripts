@@ -3,6 +3,17 @@ SHELL := /usr/bin/env bash
 all:
 	@echo >&2 "Only 'make check' allowed"
 
+include syntax.mk
+
+SHELL_SCRIPTS = \
+	build.sh \
+	clean.sh \
+	generate.sh \
+	tag.sh \
+	test-lib-openshift.sh \
+	test-lib.sh \
+	test.sh \
+	update-generated.sh
 
 TESTED_IMAGES = \
 	postgresql-container \
